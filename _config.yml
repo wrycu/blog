@@ -3,7 +3,7 @@ collections:
     output: true
 
 permalink: /:slug
-favicon: "./logo.png" # relative path to site's favicon
+favicon: "./favicon-32x32.png" # relative path to site's favicon
 
 theme_config:
   appearance: "dark" # can be "light", "dark" or "auto"

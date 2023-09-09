@@ -3,13 +3,8 @@
     "short_name": "Moonwalk",
     "icons": [
         {
-            "src": "/assets/images/favicon/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/assets/images/favicon/android-chrome-256x256.png",
-            "sizes": "256x256",
+            "src": "/assets/images/favicon/favicon-32x32.png",
+            "sizes": "332x32",
             "type": "image/png"
         }
     ],
