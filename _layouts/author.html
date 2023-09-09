@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
-<h1>{{ page.name }}</h1>
-<h2>{{ page.position }}</h2>
 
+<a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+<h1 class="post-title">{{ page.name }}, {{ page.position }}</h1>
 {{ content }}
 
-<h2>Posts</h2>
+<h2>Posts by {{ page.title }}</h2>
 <ul>
   {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
   {% for post in filtered_posts %}
