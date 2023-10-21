@@ -1,0 +1,14 @@
+{
+    "name": "Moonwalk",
+    "short_name": "Moonwalk",
+    "icons": [
+        {
+            "src": "/assets/images/favicon/favicon-32x32.png",
+            "sizes": "332x32",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
