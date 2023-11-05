@@ -4,6 +4,9 @@ collections:
 
 permalink: /:slug
 favicon: "./favicon-32x32.png" # relative path to site's favicon
+title: Leetsaber
+url: https://leetsaber.com
+author: Tim
 
 theme_config:
   appearance: "dark" # can be "light", "dark" or "auto"
