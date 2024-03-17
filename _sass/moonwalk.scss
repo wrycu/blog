@@ -42,6 +42,7 @@ table, th, td {
   border: thin solid black;
   border-collapse: collapse;
   padding: 0.4em;
+  table-layout: fixed;
 }
 
 div.highlighter-rouge pre code, pre code.highlighter-rouge {
@@ -100,7 +101,7 @@ html[data-theme="light"] { @include light-appearance; }
 @media (prefers-color-scheme: light) {
   body[data-theme="auto"] { @include light-appearance; }
 }
-  
+
 // -------------------------------------------- //
 
 html, body {
