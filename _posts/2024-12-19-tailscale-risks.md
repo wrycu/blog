@@ -4,7 +4,6 @@ author: tim
 tags: [software]
 ---
 
-# Using Tailscale: The Risks
 ## What in the world is Tailscale?
 Tailscale is a minimal-config program which allows you to quickly and securely access specific ports/applications from anywhere without exposing them to the Internet at large. It's a Virtual Private Network (VPN), but not in the traditional sense - it uses a lightweight protocol (WireGuard) under the hood and adds value by abstracting away the hardest part of actually using that protocol. The result is the ability to easily (trivially, even) set up access to any port from nearly any device for anyone. It's almost like taking candy from a baby!
 
@@ -18,7 +17,7 @@ For example, I currently use Tailscale to allow friends to join my Minecraft ser
 
 **Figure 2: I did say things I find cool would be as entertaining as my favorite pastime...**
 
-After I gushed about Tailscale to a friend, they asked if it was actually safe to use. I replied that... I assumed so. And then, over the course of about 8 months, set out to test whether this highly informed opinion was correct or not.
+After I gushed about Tailscale to a friend, they asked if it was actually safe to use. I replied that... I assumed so. And then, over the course of about 8 months, set out to test whether this highly-informed opinion was correct or not.
 
 ![Me slowly writing this post](../assets/images/tailscale/slow.gif)
 
@@ -56,7 +55,7 @@ According to Tailscale, the control plane exists as a `coordination server`. Thi
 
 ![The control plane](../assets/images/tailscale/tailscale.svg)
 
-**Figure 7: How the coordination server works.** Taken directly from the Tailscale blob (linked below)
+**Figure 7: How the coordination server works.** Taken directly from the Tailscale blog (linked below)
 
 Here are the steps for adding a node to a Tailscale (taken directly from [tailscale.com](https://tailscale.com/blog/how-tailscale-works#the-control-plane-key-exchange-and-coordination)):
 > 1. Each node generates a random public/private keypair for itself, and associates the public key with its identity.
@@ -72,7 +71,7 @@ The eagle-eyed among you may have noticed this also means that any compromise of
 
 **Figure 8: Anyone who noticed that this means you can get compromised by a coordination server compromise**
 
-This is a wonderful example of the worst case failure. Just my luck!  And almost as if Tailscale foresaw such concerns (and totally-not-exploited exploits), this vector can be partially closed by enabling [Device Approval](https://tailscale.com/kb/1099/device-approval#enable-device-approval-for-your-network), which requires that devices added to your Tailnet be approved (automatically or manually) before they can communicate with other nodes on it. Note that although enabling this would have mitigated the aforementioned failure, it does not fully mitigate the _risk_: Device Approval is configured (and approval is handled) via the same coordination server we're concerned about. 
+This is a wonderful example of the worst case failure. Just my luck!  And, almost as if Tailscale foresaw such concerns (and totally-not-exploited exploits), this vector can be partially closed by enabling [Device Approval](https://tailscale.com/kb/1099/device-approval#enable-device-approval-for-your-network), which requires that devices added to your Tailnet be approved (automatically or manually) before they can communicate with other nodes on it. Note that although enabling this would have mitigated the aforementioned failure, it does not fully mitigate the _risk_: Device Approval is configured (and approval is handled) via the same coordination server we're concerned about. 
 
 Additionally, it's possible that the coordination server could publish new keys regardless of the setting (though I'm not sure if current clients would accept this, not having inspected the code). Regardless, Device Approval covers the most likely vector for unintended devices being added to your Tailnet.
 
